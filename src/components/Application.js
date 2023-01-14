@@ -2,7 +2,7 @@ import React from "react";
 
 import "components/Application.scss";
 import DayList from "./DayList";
-import Appointment from "components/Appointment";
+import Appointment from "components/Appointment/index";
 import { useState } from "react";
 
 const days = [
@@ -62,6 +62,15 @@ const appointments = {
   }
 };
 
+const appointmentList = Object.values(appointments).map((appointment) => {
+  return (
+    <Appointment 
+     key={appointment.id}
+     {...appointment}
+    />
+  )
+ });
+
 export default function Application(props) {
   const [day, setDay] = useState("Monday");
 
@@ -80,7 +89,7 @@ export default function Application(props) {
         <img className="sidebar__lhl sidebar--centered" src="images/lhl.png" alt="Lighthouse Labs"/>
       </section>
       <section className="schedule">
-        {/* Replace this with the schedule elements durint the "The Scheduler" activity. */}
+        {appointmentList}
       </section>
     </main>
   );
