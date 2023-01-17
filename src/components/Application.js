@@ -16,7 +16,7 @@ export default function Application(props) {
     appointments: {}
   });
 
-  // const setDay = day => setState({ ...state, day });
+  const setDay = day => setState({ ...state, day });
   // const dailyAppointments = getAppointmentsForDay(state, state.day);
   const appointments = getAppointmentsForDay(state, state.day);
   
@@ -57,13 +57,13 @@ export default function Application(props) {
         <DayList
          days={state.days}
          value={state.day}
-        //  onChange={setDay}
+        onChange={setDay}
         />
         </nav>
         <img className="sidebar__lhl sidebar--centered" src="images/lhl.png" alt="Lighthouse Labs"/>
       </section>
       <section className="schedule">
-        {/* {appointmentList} */}
+        {schedule}
       </section>
     </main>
   );
