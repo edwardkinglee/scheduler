@@ -5,7 +5,8 @@ import DayList from "./DayList";
 import Appointment from "components/Appointment/index";
 import { useState, useEffect } from "react";
 import {
-  getAppointmentsForDay
+  getAppointmentsForDay,
+  getInterview
 } from "helpers/selectors";
 
 export default function Application(props) {
@@ -15,17 +16,21 @@ export default function Application(props) {
     appointments: {}
   });
 
-  const dailyAppointments = getAppointmentsForDay(state, state.day);
+  // const setDay = day => setState({ ...state, day });
+  // const dailyAppointments = getAppointmentsForDay(state, state.day);
+  const appointments = getAppointmentsForDay(state, state.day);
   
-  const setDay = day => setState({ ...state, day });
-  
-  const appointmentList = dailyAppointments.map((appointment) => {
+  const schedule = appointments.map((appointment) => {
+    const interview = getInterview(state, appointment.interview);
+    
     return (
       <Appointment 
        key={appointment.id}
-       {...appointment}
+       id={appointment.id}
+       time={appointment.time}
+       interview={interview}
       />
-    )
+    );
    });
 
   useEffect(() => {
@@ -52,13 +57,13 @@ export default function Application(props) {
         <DayList
          days={state.days}
          value={state.day}
-         onChange={setDay}
+        //  onChange={setDay}
         />
         </nav>
         <img className="sidebar__lhl sidebar--centered" src="images/lhl.png" alt="Lighthouse Labs"/>
       </section>
       <section className="schedule">
-        {appointmentList}
+        {/* {appointmentList} */}
       </section>
     </main>
   );
