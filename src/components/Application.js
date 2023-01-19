@@ -18,8 +18,6 @@ export default function Application(props) {
     interviewers: {}
   });
 
-  
-
   const setDay = day => setState({ ...state, day });
   // const dailyAppointments = getAppointmentsForDay(state, state.day);
   const appointments = getAppointmentsForDay(state, state.day);
@@ -51,10 +49,11 @@ export default function Application(props) {
       [id]: appointment
     };
 
-    setState({
-      ...state,
-      appointments
-    });
+    return axios
+      .put(`/api/appointments/${id}`, appointment)
+      .then(() => {
+        setState({...state, appointments})
+      }); 
   }
 
   useEffect(() => {
