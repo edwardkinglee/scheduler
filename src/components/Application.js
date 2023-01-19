@@ -6,20 +6,25 @@ import Appointment from "components/Appointment/index";
 import { useState, useEffect } from "react";
 import {
   getAppointmentsForDay,
-  getInterview
+  getInterview,
+  getInterviewersForDay
 } from "helpers/selectors";
 
 export default function Application(props) {
   const [state, setState] = useState({
     day: "Monday",
     days: [],
-    appointments: {}
+    appointments: {},
+    interviewers: {}
   });
+
+  
 
   const setDay = day => setState({ ...state, day });
   // const dailyAppointments = getAppointmentsForDay(state, state.day);
   const appointments = getAppointmentsForDay(state, state.day);
-  
+  const interviewersForDay = getInterviewersForDay(state, state.day);
+  console.log('interviewersForDay', interviewersForDay );
   const schedule = appointments.map((appointment) => {
     const interview = getInterview(state, appointment.interview);
     
@@ -29,12 +34,27 @@ export default function Application(props) {
        id={appointment.id}
        time={appointment.time}
        interview={interview}
+       interviewers={interviewersForDay}
+       bookInterview={bookInterview}
       />
     );
    });
 
    function bookInterview(id, interview) {
-    console.log(id, interview);
+    const appointment = {
+      ...state.appointments[id],
+      interview: { ...interview }
+    };
+  
+    const appointments = {
+      ...state.appointments,
+      [id]: appointment
+    };
+
+    setState({
+      ...state,
+      appointments
+    });
   }
 
   useEffect(() => {
