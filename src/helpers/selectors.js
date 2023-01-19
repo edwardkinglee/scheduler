@@ -27,3 +27,17 @@ export function getInterview(state, interview) {
   
   return output;
 }
+
+export function getInterviewersForDay(state, day) {
+const { days, interviewers } = state;
+const interviewersForDay = [];
+
+const targetInterviewers = days.find(element => element.name === day)?.interviewers;
+
+targetInterviewers && Object.values(interviewers).forEach(element => { 
+  if(targetInterviewers.includes(element.id)){
+    interviewersForDay.push(element);
+  }
+});
+return interviewersForDay;
+}

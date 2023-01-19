@@ -33,6 +33,10 @@ export default function Application(props) {
     );
    });
 
+   function bookInterview(id, interview) {
+    console.log(id, interview);
+  }
+
   useEffect(() => {
      Promise.all([
       axios.get("http://localhost:8001/api/days"),
