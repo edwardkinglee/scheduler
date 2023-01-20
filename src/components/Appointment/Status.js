@@ -1,7 +1,7 @@
 import React from "react";
 import Button from '../Button';
 
-export default function Confirm(props) {
+export default function Status(props) {
   
   return (
     
