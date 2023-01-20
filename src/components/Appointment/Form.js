@@ -3,7 +3,7 @@ import Button from 'components/Button';
 import InterviewerList from "components/InterviewerList";
 import react, { useState } from 'react';
 
-export default function Forms(props) {
+export default function Form(props) {
   const [student, setStudent] = useState(props.student || "");
   const [interviewer, setInterviewer] = useState(props.interviewer || null);
   
