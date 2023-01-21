@@ -68,6 +68,12 @@ export default function Appointment(props) {
         />
       )}
 
+      {mode === SAVING && (
+        <Status 
+        message={'Saving'}
+        />
+      )}
+
       {mode === CONFIRM && (
         <Confirm 
           message={'Are you sure?'}
@@ -105,7 +111,7 @@ export default function Appointment(props) {
         onClose={back}
         />
       )}
-       
+ 
     </article>
   );
 }
