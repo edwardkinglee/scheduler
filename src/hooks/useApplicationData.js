@@ -13,8 +13,7 @@ export default function useAppplication() {
   const updateSpots = (appointments) => {
     
     const dayObj = state.days.find(item => item.name === state.day);
-    console.log(dayObj);
-  
+    
     const spots = dayObj.appointments.filter(
       (appointmentId) => {
         const apptObj = appointments[appointmentId]
