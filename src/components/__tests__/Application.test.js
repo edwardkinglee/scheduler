@@ -130,8 +130,6 @@ describe("Application", () => {
 
     await waitForElementToBeRemoved(() => getByText(appointment, "Deleting"));
     
-    debug()
-    
     await waitForElement(() => getByText(appointment, "Error"));
     expect(getByText(appointment, "Could not cancel appointment.")).toBeInTheDocument();
 
