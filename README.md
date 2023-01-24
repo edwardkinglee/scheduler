@@ -4,15 +4,15 @@ Interview Scheduler is a React application that allows users to book and cancel 
 
 ## Technical Specifications
 
--React
--Webpack
--Babel
--Axios
--WebSockets
--Storybook
--Webpack Dev Server
--Jest
--Testing Library
+ “*”React
+ “*”Webpack
+ “*”Babel
+ “*”Axios
+ “*”WebSockets
+ “*”Storybook
+ “*”Webpack Dev Server
+ “*”Jest
+ “*”Testing Library
 
 ## Setup
 
@@ -37,8 +37,8 @@ npm run storybook
 ```
 ## Screenshots
 Scheduler main page
-![Screenshot of Scheduler main page] (https://github.com/edwardkinglee/scheduler/blob/master/docs/scheduler-main-page.png)
+!["Screenshot of Scheduler main page"] (https://github.com/edwardkinglee/scheduler/blob/master/docs/scheduler-main-page.png)
 Create new appointment
-![Screenshot of Scheduler main page] (https://github.com/edwardkinglee/scheduler/blob/master/docs/create-new-appointment.png)
+!["Screenshot of Scheduler main page"] (https://github.com/edwardkinglee/scheduler/blob/master/docs/create-new-appointment.png)
 Delete existing appointment
-![Screenshot of Scheduler main page] (https://github.com/edwardkinglee/scheduler/blob/master/docs/delete-appointment.png)
+!["Screenshot of Scheduler main page"] (https://github.com/edwardkinglee/scheduler/blob/master/docs/delete-appointment.png)
