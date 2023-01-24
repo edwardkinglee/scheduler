@@ -4,11 +4,15 @@ Interview Scheduler is a React application that allows users to book and cancel 
 
 ## Technical Specifications
 
-*React
-*Webpack, Babel
-*Axios, WebSockets
-*Storybook, Webpack Dev Server, Jest, Testing Library
-
+-React
+-Webpack
+-Babel
+-Axios
+-WebSockets
+-Storybook
+-Webpack Dev Server
+-Jest
+-Testing Library
 
 ## Setup
 
@@ -31,3 +35,4 @@ npm test
 ```sh
 npm run storybook
 ```
+## Screenshots
