@@ -19,8 +19,6 @@ export default function Application(props) {
   const appointments = getAppointmentsForDay(state, state.day);
   const interviewersForDay = getInterviewersForDay(state, state.day);
   
-   
-
   useEffect(() => {
     Promise.all([
       axios.get("/api/days"),
